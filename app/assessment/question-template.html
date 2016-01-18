@@ -1,0 +1,16 @@
+<div class="assessment-area" ng-show="inProgress">
+    <div style="width:50%; margin-top:25px; margin-left:25px">
+        {{question}}
+        <md-slider class="md-primary" id="blue-slider" flex md-discrete ng-model="likertSlider" step="1" min="1" max="5" aria-label="blue">
+
+        </md-slider>
+  
+        <p>You have selected: {{getLikertValue()}}</p>
+        
+        <button ng-click="nextQuestion()" ng-show="answerMode">Submit</button>
+    </div>
+</div>
+<div class="intro" ng-show="!inProgress">
+    <p>Welcome to the Assessment</p>
+    <button id="startAssessment" ng-click="start()">Begin the Assessment</button>
+</div>
