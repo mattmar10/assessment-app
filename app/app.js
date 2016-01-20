@@ -8,6 +8,14 @@ var app = angular.module('myApp', [
   'myApp.assessment',
   'myApp.version'
 ]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
+config(['$routeProvider', function ($routeProvider) {
+
+    $routeProvider.when('/assessment', {
+        templateUrl: 'assessment/assessment.html',
+        controller: 'AssessmentCtrl'
+    });
+
+    $routeProvider.otherwise({
+        redirectTo: '/view1'
+    });
 }]);
